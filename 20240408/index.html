@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<!-- 스크립트는 body와 html 사이
+     스크립트 영역을 만나면 스크립트를 읽고 진행한다.
+     스크립트에서 요소를 다루게 되면 요소가 생기고 스크립트로 제어하기 위해서. -->
+<script>
+    // 자바스크립트 작성 영역
+    var sc1 = "상처";
+    console.log(sc1);
+
+    console.log("-----------------------------");
+
+    var sc1 = "상처2";
+    console.log(sc1);
+    let string = "soon";
+
+    // 변수의 자료형
+    // 문자열은 ''. "" 로 작성한다.
+    // ex) '문자열', "문자열"
+    // 자료형의 종류
+    // 숫자, 문자, bool, null, undefined
+    // 숫자는 따움표 없이 그냥 써도 됨
+    // 문자는 '', "" 필요
+    // bool은 2진수로 true, false
+    // null은 개발자가 값이 없을것이다 라고 명시하는 자료형 ex) 빈 휴지곽도 없을 때
+    // undefined는 값이 없을 경우 ex) 휴지를 다 쓰고 빈 휴지곽만 남아있을 때
+    // 호이스팅 용어 !!
+
+    // window === 브라우저의 기능과 이벤트와 등등 사용할 수 있는 기능을 제공해줌
+    console.log("1" === 1);
+    // == 양 쪽의 값이 같은지 비교
+    // === 는표시 두개보다 자세히 비교함 자료형까지 비교
+    console.log(false)
+    // console.log는 우리의 개발자 모드에서 콘솔의 내용을 화인 할 수 있다. 디버깅할 때 많이 사용한다.
+    console.log(string2);
+    var string2 = "문자열 자료형";
+    console.log(string2);
+    // let은 이름이 같으면 안됨, 선언 후 사용해야 함, 선언 전에 사용하면 레퍼런스 에러가 뜸
+    // var와 let의 예약어를 읽을 때 var는 undefined를 let은 빈 값을 (레퍼런스 에러)
+    let number = 1;
+    let number2 = 2;
+    // 용어 예약어(var, let, const) 변수명(우리가 정하는 이름) = (할당) 1(변수의 값이자 자료형은 number)
+    // 숫자 자료형
+    // = 는 할당, == 는 양쪽 값이 같은지 비교, === 는 양쪽 값이 같고 자료형도 같은지 비교
+
+    // bool 자료형
+    let bool = true;
+    let bool2 = false;
+
+    // null 자료형 개발자가 빈 값을 명시해놓는것. (휴지 두루마리 각이 없는 것.)
+    let temp = null;
+
+    // undefined (휴지 두루마리 다 쓰고 각 안뺌) 개발자가 예측하지 못해서 빈값인 자료형, 살짝 휴지 다 쓴지 몰라서 각을 안 빼놓은 느낌
+    let temp2 = undefined;
+    let temp3 = "123";
+
+    // 연산자
+    console.log(1 + 1);
+    console.log(1 - 1);
+    console.log(4 / 2);
+    console.log(7 % 2);
+    console.log(2 * 3);
+
+    let num = 10;
+    let num2 = 20;
+    let num3 = num + num2; // 30
+    console.log(num3)
+    // 계산기를 만든다 생각하면
+    const number0 = "0";
+    const number1 = "1";
+    const _number2 = "2";
+    const number3 = "3";
+    const number4 = "4";
+    const number5 = "5";
+    const number6 = "6";
+    const number7 = "7";
+    const number8 = "8";
+    const number9 = "9";
+    const add = "+"
+    let result = "";
+    // "12+20"
+    result = number1 + _number2 + add + _number2 + number0;
+    console.log(result);
+
+    // 형번환 자료형이 변환된다.
+    // 숫자에 문자를 더하면 형번환이 일어난다.
+    // 1은 숫자 자료형이었지만
+    // 14라는 문자열로 형변환 된다.
+    console.log(1 + number4);
+
+    // 표기법
+    let myName; // 카멜 표기법 (제일 많이 사용됨)
+    let MyName; // 파스칼 표기법
+    let my_name; // 스네이크 표기법
+
+    // 카멜 표기법
+
+    // 실습
+    // 0. 전화번호는 자료형 숫자 900 + 50 + 3 
+    // 1. 철수와 영희가 전화를 받았다.
+    // 2. 철수가 안녕이라고 영희에게 말했다.
+    // 3. 영희는 나 잘래 하고 끊었다.
+
+    // 각각의 변수로 만드는데 띄어쓰기 구무남다 합연산자.
+
+    let keyword = "";
+    let key1 = "병헌이가 ";
+    let key2 = "아침을 ";
+    let key3 = "먹었을까?";
+    keyword = key1 + key2 + key3;
+    "병헌이가 아침을 먹었을까?"
+    // let = 예약어
+
+
+    let phonenumber = "전화번호는 자료형 숫자 "
+    let three = 900;
+    let two = 50;
+    let one = 3;
+    let cs = "철수와 ";
+    let yh = "영희가 ";
+    let call = "전화를 ";
+    let receive = "받았다.";
+    const plus = three + two + one;
+
+    let cs2 = "철수가 ";
+    let hi = "안녕이라고 ";
+    let yh2 = "영희에게 ";
+    let talk = "말했다."
+
+    let yh3 = "영희는 "
+    let sleep = "나 잘래 "
+    let active = "하고 "
+    let cut = "끊었다."
+
+
+    // html와 css는 화면 출력
+    // javaScript는 논리
+    // 이 행동 자체의 의미
+    // 선언과 할당의 차이
+    //typeof 타입을 체크할 때 사용하는 내장 함수
+
+    console.log(String(phonenumber) + plus);
+    console.log(cs + yh + call + receive);
+    console.log(cs2 + hi + yh2 + talk);
+    console.log(yh3 + sleep + active + cut);
+
+    // 문자형이 아닌 자료형으로 숫자를 표헌하고 싶을 때 Number <- 첫글자 대문자로 표시해야 함
+    // 선언을 하나 더 해서 자료형을 더하고 싶은 걸 더해준 뒤 그 선언을 선언함으로써 문자형으로 변환되는거를 막아줄 수 있음
+    // 사칙연산 느낌으로 콘솔에 띄워주기 전에 소괄호로 한번 묶어줌으로써 문자형과 자료형을 같이 띄우고 싶을 때 자료형이 문자형으로 변환되는걸 막아주고 먼저 계산해서 띄워주는 느낌
+
+</script>
+
+</html>

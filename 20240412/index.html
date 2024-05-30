@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let a = "철수"
+    function name() {
+        // 지역 스코프
+        function name2() {
+            console.log(a);
+        }
+        name2();
+    }
+    name();
+    // name2 -> 내 스코프에서 a를 찾아야지 -> name에서 a를 찾고 -> 전역에서 찾는다.
+
+    function name2() {
+        return "내가 함수를 실행하고 사용하고 싶은 결과"
+    }
+    // 함수의 실행식을 변수에 할당하면?
+    // undefined를 기본으로 반환한다.
+    let b = name2();
+    console.log(b);
+
+    // 실습 : 함수를 호출하면 키위 음료수를 받았습니다.
+
+    // 심화 : 함수를 호출할 때 내가 전달한 인자로 음료수의 종류를 받게끔
+    // 심화 : 함수를 실행하면 반환받은 결과로 console.log(여기에 함수를 실행해서) 결과 도출
+
+
+    function name4() {
+        console.log("키위 음료수를 받았습니다.");
+    }
+
+
+    function name4(fruit) {
+        return fruit + "음료수를 받았습니다."
+
+    }
+    console.log(name4("키위"));
+
+    function cup(drink) {
+        return (`컵에 ${drink}를 따라서 먹으니 기분이 좋아. ㅎㅎ`);
+    }
+
+    // let d = cup("레몬에이드");
+    console.log("", "", "");
+    function vending(money, unit = null, text = null) {
+        // 거스름돈
+        // console.log(`${unit} 짜리 ${money / unit}개`)
+        // money = 1000
+        // unit = 100
+        // text = "기분이 좋아"
+        console.log(vending.length)
+        if (unit === null) {
+            console.log(`${money}원을 넣었어`);
+        } else if (unit !== null && text === null) {
+            console.log(`${unit} 짜리 ${money / unit}개`)
+        } else if (unit !== null) {
+            console.log(`${unit} 짜리 ${money / unit}개 ${text}`)
+        }
+    }
+
+    // 지폐를 넣고 1000짜리 500원 단위로 거슬러줘
+    vending(1000);
+    vending(1000, 500);
+    vending(1000, 100, "기분이 좋아");
+    // 함수에는 length라는 키와 값이 존재한다.
+    // 매개변수를 몇개 받을 수 있는 함수인지 ?
+    console.log(vending.length);
+    console.log("12345678".length)
+
+    // 실습 두개의 수를 인자로 받아서 더해주는 함수를 만들자.
+
+    // 심화 전달한 인자(인덱스)로 성격을 3가지만 골라서 보여주는 내용
+    // 분노조절 잘한다. 상냥하다. 조용하다.
+
+    function add(one, two) {
+        console.log(`${one + two}`);
+    }
+    add(20, 500)
+
+    function character(funny, kindness = null, cute = null) {
+        console.log(character)
+        if (kindness === null, cute === null) {
+            console.log(`${funny} 성격이야`);
+        } else if (kindness !== null && cute === null) {
+            console.log(`${kindness} 성격이야`);
+        } else if (kindness !== null) {
+            console.log(`${cute} 성격이야`);
+        }
+    }
+
+    // character(funny);
+    character
+    // 0과 1과 2를 주고 그것에 맞게 조건을 부여한 뒤 골라서 출력해주는 느낌
+    character
+
+    // 콜백 함수
+    function hello(fn) {
+        let a = "js";
+        console.log(fn(a));
+    }
+
+    function print(name) {
+        let a = 1;
+        return 10 + name;
+    }
+
+    hello(print);
+
+    console.log(function () { return 1 });
+
+    function mh(mh1) {
+        let b = ""
+    }
+</script>
+
+</html>

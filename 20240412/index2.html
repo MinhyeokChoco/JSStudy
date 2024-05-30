@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 콜백 함수
+    function name(fn) {
+        let a = 1;
+        console.log(fn());
+    }
+
+    function name2(a) {
+        console.log(a);
+        console.log("1236")
+        return 1;
+    }
+    name(name2);
+
+
+    // 함수에 리턴문이 없으면 무조건 undefined
+</script>
+
+</html>

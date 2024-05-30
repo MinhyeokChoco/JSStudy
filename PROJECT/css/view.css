@@ -1,0 +1,95 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.wrap>.wrap-title>h1 {
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 70px;
+}
+
+.wrap>.guide {
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 0px 40px;
+    background-color: lightgreen;
+    border-radius: 10px;
+}
+
+.wrap>.guide>span:nth-child(1) {
+    width: 5%;
+}
+
+.wrap>.guide>span:nth-child(2) {
+    width: 30%;
+}
+
+.wrap>.guide>span:nth-child(3) {
+    width: 30%;
+}
+
+.wrap>.guide>span:nth-child(4) {
+    width: 10%;
+}
+
+.wrap>.guide>span:nth-child(5) {
+    width: 15%;
+}
+
+.wrap>.guide>span:nth-child(6) {
+    width: 10%;
+}
+
+.wrap>.guide>span {
+    display: inline-block;
+}
+
+.wrap>.write-wrap {
+    width: 100%;
+    float: right;
+}
+
+.wrap>.list>ul {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 0px 40px;
+}
+
+.wrap>.list>ul>li:nth-child(1) {
+    width: 5%
+}
+
+.wrap>.list>ul>li:nth-child(2) {
+    width: 30%
+}
+
+.wrap>.list>ul>li:nth-child(3) {
+    width: 30%
+}
+
+.wrap>.list>ul>li:nth-child(4) {
+    width: 10%
+}
+
+.wrap>.list>ul>li:nth-child(5) {
+    width: 15%
+}
+
+.wrap>.list>ul>li:nth-child(6) {
+    width: 10%
+}

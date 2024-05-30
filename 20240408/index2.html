@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 단항 산술 연산자
+    let _num = 1;
+    let _num2 = 7;
+    let _num3 = _num + _num2;
+
+    console.log(++_num);
+    console.log(_num);
+
+    // 값을 호출하고 증가 할건지
+    // 값을 증가시키고 호출 할건지
+
+    // _num2++;
+    // ++은 값을 1씩 증가
+
+    _num2 %= 5;
+    // += 5는 5씩 증가
+    // -= ?는 ?씩 감소
+    // 여기서 +,-,/,* 는 연산식 뒤에 =는 할당
+    console.log(_num2);
+
+    // 비교 연산자
+    // 값은 true false
+    // 결과물을 boolean 타입으로 반환한다.
+
+    let a;
+    let b;
+    a = 1;
+    b = "1";
+
+    // ===은 데이터 타입까지 검사를 한다.
+    console.log(a == b);
+    console.log(false == false);
+
+    // 부정 연산자
+    // !
+    console.log(!false);
+
+    // 비교 연산자 부정 연산자
+    console.log(a !== b);
+
+    console.log(1 == true);
+    console.log(0 == false);
+
+    // 1. 변수를 선언하시고 50에 -5씩 5번을 빼면서 로그를 보여주시고
+    // 2. 25 비교 문자열 25 비교를 비교연사자를 타입검사까지 하는거랑 타입 검사 안하고 비교하는거. 
+    // 3. 부정 연산자로 true와 false를 작성해보기
+
+    let fifty;
+    fifty = 50;
+
+    twentyfive = "25";
+
+    fifty -= 5;
+    // fifty = fifty - 5;
+    console.log(fifty); // 5씩 5번 중 1번째 빼기
+    fifty -= 5;
+    // fifty = fifty - 5;
+    console.log(fifty); // 5씩 5번 중 2번째 빼기
+    fifty = fifty - 5;
+    console.log(fifty); // 5씩 5번 중 3번째 빼기
+    fifty = fifty - 5;
+    console.log(fifty); // 5씩 5번 중 4번째 빼기
+    fifty = fifty - 5;
+    console.log(fifty); // 5씩 5번 중 5번째 빼기
+
+
+    console.log(fifty === twentyfive);
+    console.log(fifty == twentyfive);
+
+    console.log(fifty !== ++fifty);
+    console.log(fifty == ++fifty);
+
+    console.log(fifty + Number(twentyfive));
+
+</script>
+
+</html>
+
+<!-- 
+
+    let x =5
+
+    console.log(x++ === --x);
+
+    // 1. x++는 먼저 실행. 하지만 후위기 때문에 6이 되지만 실질적으로 ++는 나중이니.
+    // 5가 됌
+    // ++x 6 ++ 7이되는거지 5 + 7
+    // 12
+    // 그래서 x++ 와 ++x는 비교연산자를 사용했을 때 다르다고 나옴
+    
+ -->

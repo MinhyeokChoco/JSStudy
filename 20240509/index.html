@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    setTimeout(() => {
+        console.log("안녕");
+    }, 5000);
+
+    const promise = new Promise((res, rej) => {
+        // 비동기 처리 구문
+        // setTimeout
+        setTimeout(() => {
+            res("성공했어");
+        }, 5000)
+        setTimeout(() => {
+            rej("실패했어");
+        }, 3000)
+    });
+
+    promise
+        .then((result) => { console.log(result) }) // 비동기 처리 이후에 반환된 값도 비동기 처리(대기상태의 객체)를 해야하는 경우
+        .then((result2) => { console.log(result2) }) // 비동기 처리를 한번 더 하고 result2에 반환한다.
+        .catch((error) => { console.log(error) });
+
+    function callback(fn) {
+        fn();
+    }
+
+    callback(() => {
+        console.log("안녕1");
+        callback(() => {
+            console.log("안녕2");
+            callback(() => {
+                console.log("안녕3");
+            })
+        })
+    })
+
+    const num = 10;
+    const promise2 = new Promise((res, rej) => {
+        if (num > 5) {
+            res("num이 5보다 크다.");
+        } else {
+            rej("num이 5보다 작다.");
+        }
+    });
+
+    promise2.then((result) => { console.log(result) }).then().catch((error) => { console.log(error) })
+
+    function add(num) {
+        return num + 1;
+    }
+    function addPromise(addfn, num) {
+        return new Promise((res, rej) => {
+            res(addfn(num));
+        })
+    }
+
+    addPromise(add, 1).then((result) => { console.log(result) }).catch(() => { console.log(error) })
+
+    // promise3.then((result) => { console.log(result) })
+    const promise4 = new Promise((res, rej) => {
+        res(1 + 1);
+    })
+
+    promise3.then(() => { })
+
+
+
+
+    const promise3 = new Promise((res, rej) => {
+        // 서버에 요청을 보냈다.
+        const _res = {
+            result: "성공", data: [{ id: 1, name: 2, age: 3 },
+            { id: 1, name: 2, age: 3 }, { id: 1, name: 2, age: 3 }]
+        }
+        if (_res.result === "성공") {
+            // res(res.data);
+            res(_res);
+        } else {
+            rej("error 데이터 요청 실패");
+        }
+    })
+
+    // promise3.then(({ data }) => { console.log(data) });
+    promise3.then((res) => { console.log(res.data) });
+
+    const callbackPromise = (text, time) => {
+        return new Promise((res, rej) => {
+            try {
+                // 정상적으로 코드가 실행되면
+                // 비동기 처리
+                setTimeout(() => {
+                    res(text);
+                }, time);
+            } catch (e) {
+                // 코드가 정상적으로 실행되지 않으면
+                rej(e);
+            }
+        })
+    }
+
+    // promise3.then(({ data }) => { console.log(data) });
+
+
+    callbackPromise("text 0", 1000)
+        .then((result) => {
+            // then은 promise가 성공 하면 전달한 콜백함수 호출
+            console.log(result);
+            return callbackPromise("text 1", 1000); // 반환되는 promise 객체 안에 result값으로 할당한다.
+        })
+        .then((result) => {
+            console.log(result);
+            return callbackPromise("text 2", 1000);
+        })
+        .then((result) => {
+            console.log(result);
+            return callbackPromise("text 3", 1000);
+        })
+        .catch((result) => {
+            // catch는 실패가 되면 호출되면 실행되는 콜백 함수
+            console.log(result);
+        });
+
+
+    // async를 붙인 함수는 반환이 promise
+    const asyncFn = async () => {
+        try {
+            // const test1 = callbackPromise("text1", 1000);
+            // Promise 객체의 대기상태
+
+            const text1 = await callbackPromise("text1", 1000);
+            // await 뒤에 promise 대기 상태이면 코드를 밑으로 진행 시키지 않는다.
+            // promise 객체의 대기 이후에 처리 결과를 반환
+            console.log(text1);
+
+            const text2 = await callbackPromise("text2", 1000);
+            console.log(text2);
+
+            const text3 = await callbackPromise("text3", 1000);
+            console.log(text3);
+
+            return text1;
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+    console.log(asyncFn());
+
+    async function a() {
+        await asyncFn();
+        console.log("안녕");
+    }
+    a();
+
+</script>
+
+</html>
